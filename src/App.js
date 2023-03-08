@@ -59,7 +59,7 @@ handleChange = (event) => {
   // This code returns the player stats
   getPlayerStats = (playerId) => {
 
-    axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=${playerId}`)
+    axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`)
     .then(async res => {
       console.log(res.data.data)
       this.setState({ playerStats: res.data.data[0]})
@@ -96,6 +96,10 @@ handleChange = (event) => {
       Rebounds Averaged: {this.state.playerStats["reb"]}
       <br />
       Assists Averaged: {this.state.playerStats["ast"]}
+      <br />
+      Steals Averaged: {this.state.playerStats["stl"]}
+      <br />
+      Blocks Averaged: {this.state.playerStats["blk"]}
     </div>
   );
 }
